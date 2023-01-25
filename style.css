@@ -9,6 +9,7 @@ h2 {
   font-weight: 400;
   margin: 0 10px 10px 10px;
   text-align: center;
+  padding-top: 10px;
 }
 
 h3 {
@@ -38,8 +39,11 @@ main img {
 
 .group {
   display: flex;
-  flex-direction: column;
-}
+  flex-direction: row;
+  justify-content: center;
+  flex-flow: row nowrap;
+  align-items: center;
+  }
 
 .item {
   flex: 1;
@@ -47,8 +51,8 @@ main img {
 }
 
 .item-double {
-  flex: 2;
-}
+  padding: 20px;
+  }
 
 /* -------  Navigation ------- */
 
@@ -62,6 +66,11 @@ header {
   font-family: "Pangolin", cursive;
   font-size: 72px;
   color: #fff;
+}
+
+header nav {
+  display: flex;
+  justify-content: center;
 }
 
 header nav ul li {
@@ -112,11 +121,16 @@ form div {
   justify-content: space-between;
 }
 
-#about {
+/* #about {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 15px;
-}
+} */
+
+/* #about h2 {
+  align-items: top;
+} */
+
 /* main img {
   width: 100%;
 } */
@@ -134,25 +148,26 @@ footer p {
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 481px){
-  header{
+@media all and (min-width: 481px) {
+  header {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  form{
+  form {
     display: flex;
     gap: 15px;
   }
 
-  form div{
+  form div {
     flex-direction: column;
     width: 18%;
     flex: 1;
   }
 
-  form div input, form div select {
+  form div input,
+  form div select {
     width: 100%;
   }
 
@@ -162,19 +177,23 @@ footer p {
   }
 
   /* make the images side by side with the text */
-  #about{
+  /* #about {
     display: flex;
     align-items: center;
     gap: 15px;
-  }
+  } */
 
-  #about div{
+  #about div {
+    display: flex;
     flex: 1;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
   }
 
-  #about img{
-    width: 20%;
+  #about img {
+    width: 26%;
+    padding: 10px;
   }
 
   .row {
@@ -186,7 +205,7 @@ footer p {
     flex: 1;
   }
 
-  .row div img{
+  .row div img {
     height: 400px;
     object-fit: cover;
   }
@@ -197,9 +216,7 @@ footer p {
     gap: 15px;
   }
 
-  #host img{
+  #host img {
     width: 50%;
   }
-
-
 }
